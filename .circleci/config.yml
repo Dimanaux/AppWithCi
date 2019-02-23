@@ -16,6 +16,9 @@ jobs:
     - run:
         name: Download Dependencies
         command: ./gradlew androidDependencies
+    - run:
+        name: Run detekt
+        command: ./gradlew detekt
     - save_cache:
         paths:
         - ~/.gradle
