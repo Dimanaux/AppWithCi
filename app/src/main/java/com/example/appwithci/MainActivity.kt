@@ -10,9 +10,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    val value =
-        "Hello world!" + "\n this string is tooooooo loooooooooooooooooooooooooooooooooooooooong, isn't it???????????????????????????????????"
+    val value = "Hello world!" + "\n this striiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiig"
 }
+
+
+
+
+
+
 
 
 

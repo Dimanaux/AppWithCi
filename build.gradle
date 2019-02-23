@@ -19,6 +19,10 @@ plugins {
     id("io.gitlab.arturbosch.detekt").version("1.0.0-RC14")
 }
 
+dependencies {
+    detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:1.0.0-RC14"
+}
+
 allprojects {
     repositories {
         google()
@@ -29,16 +33,5 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
-}
-
-detekt {
-    toolVersion = "[version]"
-    input = files("src/main/kotlin")
-    filters = ".*/resources/.*,.*/build/.*"
-//    baseline = file("my-detekt-baseline.xml") // Just if you want to create a baseline file.
-}
-
-dependencies {
-    detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:[version]"
 }
 

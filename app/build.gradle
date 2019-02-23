@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'io.gitlab.arturbosch.detekt'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -30,4 +32,21 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+detekt {
+    version = "1.0.0-RC14"
+    input = files("${project.rootDir}/${project.getName()}/src/main/")
+    config = files("${project.rootDir}/.circleci/detekt/detekt-config.yml")
+    filters = ".*test.*,.*/resources/.*,.*/tmp/.*"
+    reports {
+        xml {
+            enabled = true
+            destination = file("build/reports/detekt.xml")
+        }
+        html {
+            enabled = true
+            destination = file("build/reports/detekt.html")
+        }
+    }
 }
