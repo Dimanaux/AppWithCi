@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     working_directory: ~/AppWithCi
-    docker:
+    docker:1
     - image: circleci/android:api-25-alpha
     environment:
       JVM_OPTS: -Xmx3200m
