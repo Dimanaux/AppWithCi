@@ -3,12 +3,16 @@
 
 ## hierarchy
 Repo stores the project root.
+
 App module is stored in /app.
 
 ### .circleci/config.yml
-Add as many jobs as you want
+Add as many jobs as you want.
+
 Working directory = ~/<repo-name>
+
 Docker image - choose correct api version, e.g circleci/android:api-28-alpha
+
 I run detekt to check code quality before build:
 ```
   - run:
